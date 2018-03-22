@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断是否为2的n次幂</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="css/basic.css">
+</head>
+<style>
+body,html{
+    padding: 100px;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number],input[type=text]{
+    width :200px;
+    height: 30px;
+    border: 1px solid #666;
+    float: left;
+    padding-left: 10px;
+    font-size :16px;
+    margin-left: 10px;
+}
+input[type=checkbox]{
+    width: 30px;
+    height: 30px;
+    float: left;
+}
+label{
+    float: left;
+}
+button{
+    width :60px;
+    height: 30px;
+    background: rgb(39, 157, 232);
+    color: white;
+    margin-left: 50px;
+    border:none;
+    cursor: pointer;
+}
+.box{
+    width: 900px;
+    margin-top: 50px;
+    background: #f0f0f0;
+}
+.list{
+    width: 100%;
+    height: 50px;
+    background: rgb(116, 39, 219);
+    color: #fff;
+    padding-left: 8px;
+    margin-bottom: 10px;
+}
+p{
+    float: left;
+}
+</style>
+<body>
+<input type="number"  id="num"> <button id="confirm">确认</button>
+<ul class="box">
+
+</ul>
+<script>
+    var html='<li class="list"><p>final</p><input type="checkbox" class="double"><label for="double">double</label><input type="text" placeholder="first"></li>';
+    var math='<li class="list"><p>four</p><input type="checkbox" class="double"><label for="double">double</label><input type="text" placeholder="first"></li>';
+    var cinput='<input type="text" placeholder="second">';
+
+    $("#confirm").click(function() {
+        var val = $("#num").val();
+        console.log(val)
+        if(val>10){
+            alert("最大为10，已超出范围")
+        }
+        if(val==2){
+            $(".box").append(html)
+
+        }
+        if(val>2&&val<=4){
+            $(".box").append(math)
+        }
+        var checkbox=$(".double");
+        console.log(checkbox)
+        checkbox.change(function(e){
+            var checkbox=e.target;
+            if(checkbox.checked){
+                $(this).parent(".list").append(cinput)
+            }else{
+                $(this).parent(".list").children(":last").remove()
+            }
+        })
+    });
+    function add(){
+
+    }
+    add();
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改用户头像</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<style>
+.info{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    background: rgba(25, 82, 16, 0.69);
+}
+.info img{
+    display: inline;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+
+}
+.info form input[file]{
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+</style>
+<body>
+    <div class="info">
+        <form enctype="multipart/form-data" action="" method="post">
+            <img src="img/bac.png" alt="">
+            <input type="file" name="file" id="file" accept="image/*" class="hide">更改头像
+        </form>
+    </div>
+</body>
+<script>
+$(document).ready(function(){
+        $("input[name='file']").change(function(){
+            //FormData对象，
+            //可以把form中所有表单元素的name与value组成一个queryString，提交到后台。
+            //在使用Ajax提交时，使用FormData对象可以减少拼接queryString的工作量
+            var formData = new FormData();
+            formData.append("file",$("input[name='file']")[0].files[0]);
+            $.ajax({
+                url:'upload-ajax.php',
+                type:'post',
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success:function(data){
+                    console.log(data);
+                    if(data.status=="fail"){
+                        alert(data.message);
+                    }
+                    // #根据上传成功并返回压缩后的图片url，更新img标签src属性
+                    if(data.status=="success"){
+                        $(".info img").attr("src",data.url+"?"+new Date().getTime());
+                    }
+                },error:function(e){
+                    console.log(e);
+                }
+            });
+        });
+    });
+</script>
+</html>

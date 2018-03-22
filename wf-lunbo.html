@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝轮播</title>
+    <!--css-->
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!--js-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!--[if IE]>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <![endif]-->
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<style>
+    .num .act{
+        background: #566679;
+    }
+
+    .code{
+        margin-top: 100px;
+        background: #EEEEEE;
+    }
+    .code .bg{
+        width: 100%;
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+    }
+    .code .bg .sbg{
+        width: 100%;
+        height: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        position: absolute;
+        top:0;
+        border:1px solid black;
+        font-size: 120px;
+        text-align: center;
+        line-height: 3;
+    }
+    .code .num{
+        width: 100px;
+        height: 15px;
+        background: magenta;
+        margin: 0 auto;
+    }
+    .code .num .act{
+        background: yellow;
+    }
+    .code .num li{
+        width: 15px;
+        height:15px;
+        float: left;
+        margin-right: 5px;
+        border-radius: 50%;
+        background: #666666;
+    }
+</style>
+<body>
+
+
+
+
+
+
+
+
+<div class="container code">
+    <ul class="bg">
+        <li class="sbg">1</li>
+        <li class="sbg">2</li>
+        <li class="sbg">3</li>
+        <li class="sbg">4</li>
+    </ul>
+    <ul class="num">
+        <li class="act">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+<script>
+    var widths = $(".bg .sbg").innerWidth();
+    console.log(widths);
+    $(".bg .sbg").css('left',widths+'px').eq(0).css('left',0);
+    var now=0;
+    var next=0;
+    var flag=true;
+    function moke(type='r') {
+        if(!flag){
+            return;
+        }
+        flag=false;
+        if(type=='r'){
+            next++;
+            if(next>=$(".bg .sbg").length){
+                next=0;
+            }
+            $(".bg .sbg").eq(next).css('left',widths);
+            $(".bg .sbg").eq(now).animate({'left':-widths},1000);
+        }
+        if(type=='l'){
+            next--;
+            if(next<0){
+                next=$(".bg .sbg").length-1;
+            }
+            $(".bg .sbg").eq(next).css('left',-widths);
+            $(".bg .sbg").eq(now).animate({'left':widths},1000);
+        }
+        $(".bg .sbg").eq(next).animate({'left':0},1000,function () {
+            flag=true;
+        });
+
+        $(".num>li").eq(now).removeClass('act');
+        $(".num>li").eq(next).addClass('act');
+        now=next;
+    }
+    var t=setInterval(moke('r'),2000);
+    $('.bg').mouseenter(function () {
+        clearInterval(t);
+    }).mouseleave(function () {
+        t=setInterval(moke('r'),2000);
+    })
+    $('.num>li').mouseenter(function () {
+        var index=$(this).index();
+        if(index>next){
+            next=index-1;
+            moke('r');
+        }
+        if(index<next){
+            next=index+1;
+            moke('l');
+        }
+    })
+</script>
+
+</body>
+</html>

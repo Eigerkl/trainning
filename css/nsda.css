@@ -1,0 +1,253 @@
+@media (min-width:1200px){
+    .regform-con h3{
+        padding-left:240px;
+    }
+    .reg-sign{
+        max-width:870px;
+        height:1040px;
+        margin:0 auto;
+        border:20px solid #FFD600;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        margin-top:50px;
+        position:relative;
+        padding:75px 170px 50px 170px;
+    }
+    .signup{
+        display:inline-block;
+        max-width:260px;
+        max-height:64px;
+        background:white;
+        position:absolute;
+        top:-64px;
+        left:70px;
+        font-size:60px;
+        color:#ffd600;
+        padding:5px;
+        font-weight:600;
+    }
+    .form-group label.form-label{
+        width:20%;
+        text-align:right;
+        font-size:14px;
+        margin-right:8px;
+    }
+    .form-group input.form-input{
+        width:76%;
+    }
+    .form-group-small{
+        float:left;
+    }
+    .form-group-small:first-child{
+        margin-right:20px;
+        width:55%;
+    }
+    .form-group-small:last-child{
+        width:40%;
+    }
+    .form-group-small:first-child label.form-label{
+        width:36%
+    }
+    .form-group-small:first-child input.form-input{
+        width:50%;
+    }
+    .form-group-small:last-child label.form-label{
+        width:30%
+    }
+    .form-group-small:last-child input.form-input{
+        width:61%;
+    }
+    .form-group .form-select-grade,.form-group .form-input-phone{
+        width:27%;
+    }
+    .form-group input.form-input,.form-group .form-select-grade,.form-group .form-input-phone,.form-group .form-select-card,.form-group .form-input-card,.form-group .form-select-school,.form-group .form-select-schoolads{
+        height:35px;
+        border-radius:6px;
+        -webkit-border-radius:6px;
+        -moz-border-radius:6px;
+        border:1px solid #797979;
+        background:#F4F4F1;
+    }
+    .form-group .form-select-card{
+        width:23%;
+    }
+    .form-group .form-input-card{
+        width:52%
+    }
+    .form-group .form-select-school{
+        width:14%;
+    }
+    .form-group .em{
+        margin-left:30px;
+        margin-right:30px;
+        font-size:20px;
+    }
+    .schoolads{
+        margin-left:110px;
+        margin-top:15px;
+    }
+    .form-group .form-select-schoolads{
+        width:15%;
+    }
+    .form-group .form-sel-ads{
+        width:45%;
+    }
+    .form-ctrl .button{
+        width:76%;
+        height:35px;
+        margin-left:110px;
+        margin-top:60px;
+        background:radial-gradient(#049EE3, #10B5FF, rgb(30, 144, 255));
+        text-align:center;
+        color:white;
+        font-size:18px;
+        border:1px solid #797979;
+        border-radius:6px;
+        -webkit-border-radius:6px;
+        -moz-border-radius:6px;
+        box-shadow:1px 1px 20px 1px #797979;
+    }
+    .form-group .sexy{
+        margin-left:15px;
+    }
+    .form-sexy{
+        padding-top:9px;
+    }
+}
+.regform-con{
+    padding-top:35px;
+
+    font-family:"微软雅黑";
+}
+.regform-con h3{
+    color:#00ccff;
+}
+.form-group{
+    height:35px;
+
+}
+
+
+/*布局开始*/
+#login_dialog {
+    position: fixed;
+    left: 40%;
+    top: 40%;
+    background-color: #303a40;
+    width: 500px;
+    margin-left: -200px;
+    margin-top: -150px;
+    font-family: "黑体";
+    /*禁止复制粘贴*/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select:none;
+}
+.register_dialog_title {
+    height: 35px;
+    line-height: 35px;
+    margin: 0 5px;
+}
+
+.register_dialog_info {
+    float: left;
+    margin-left:10px;
+    color: #fff;
+    margin-top: 5px;
+    font-size: 20px;
+}
+#register_dialog {
+    position: fixed;
+    left: 40%;
+    top: 40%;
+    background-color: #303a40;
+    width: 500px;
+    /* 	height: 600px; */
+    margin-left: -200px;
+    margin-top: -200px;
+    font-family: "黑体";
+    -moz-user-select:none; /*火狐*/
+    -webkit-user-select:none; /*webkit浏览器*/
+    -ms-user-select:none; /*IE10*/
+    -khtml-user-select:none; /*早期浏览器*/
+    user-select:none;
+}
+
+.register_dialog_info {
+    float: left;
+    margin-left:10px;
+    color: #fff;
+    margin-top: 5px;
+    font-size: 20px;
+}
+.dialog_close {
+    cursor: pointer;
+    width: 40px;
+    height:40px;
+    border-radius:25px;
+    float: right;
+    line-height:40px;
+    font-size: 20px;
+    color: #d8dadb;
+    font-family: "微软雅黑";
+    text-align: center;
+    cursor:center;
+}
+form{padding: 20px 0px;}
+ul li {list-style: none;}
+.sub {
+    text-align: center;
+}
+.sub input {
+    display: inline-block;
+    width: 300px;
+    background-color: rgb(255, 109, 11);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-family: 黑体;
+    outline: none;
+    border: none;
+    margin: auto;
+}
+.dialog_close:hover {
+    background-color: #566
+}
+input[type = "submit"]:hover{cursor: pointer;}
+/*布局结束*/
+.reg-box { padding-left: 30px; }
+
+.reg-box li { line-height: 44px; width: 500px; overflow: hidden; }
+
+.reg-box li label { width: 68px; height: 50px; float: left; line-height: 50px; text-align: right; padding-right: 20px; }
+
+.reg-box li input,.reg-box li select{ padding: 6px 0; font-size: 16px; width: 296px; height: 28px; line-height: 28px; border: 1px solid #dddddd; text-indent: 0.5em; float: left; }
+
+.reg-box li select option{font-size:16px;}
+
+.registered .btn a { background: #ff7200; margin-left: 110px; }
+
+/*验证码*/
+.add { width: 128px; height: 44px; float: left; _display: inline; cursor: pointer; margin-left: 20px; }
+
+.reg-box li .sradd { width: 148px; text-indent: 4px; font-size: 14px; }
+
+.reg-box li .input-code { width: 106px; padding: 10px; font-family: Arial; font-style: italic; color: red; letter-spacing: 1px; cursor: pointer; text-align: center; text-indent: 0; }
+
+.yzm,.phoKey { background: #ff7200; text-align: center; line-height: 44px; color: #fff; }
+
+.phoKey{letter-spacing: 3px; font-size:18px;}
+
+.yzmc { background: #dddddd; text-align: center; line-height: 44px; color: #999; }
+
+.error { clear:both;display:block;color: red; padding-left: 90px; padding-bottom:5px;height:20px;float: left; font-size:12px;line-height: 20px;}
+
+input { background-color: #fff; outline: none; }
+
+.reg-box li { width: auto; }
+
+.reg-box li input.errorC, .errorC{ border: 1px solid red; }
+
+.reg-box li input.checkedN , .checkedN{ border: 1px solid #1ece6d; }

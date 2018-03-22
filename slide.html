@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slide</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="css/basic.css">
+</head>
+<style>
+body,html{
+    padding: 70px;
+}
+.bigbox{
+    width: 200px;
+    border: 1px solid black;
+    padding: 8px;
+}
+.list{
+    height: 40px;
+    padding: 5px 10px;
+}
+.list:not(:last-child){
+    border-bottom: 1px dashed rgb(187, 62, 179);
+}
+.ready,.start{
+    width: 90%;
+    padding: 8px 10px;
+    border: none;
+    color: white;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.ready{
+    display: inline-block;
+    width: 90%;
+    background: #CAE69A;
+    border: 1px solid #A7CB6C;
+    color: #999966;
+    text-align: center;
+    margin-top: 5px;
+    line-height: 26px;
+}
+.start{
+    background: linear-gradient(to bottom,#FFA9A8,#FF8281);
+    border: 1px solid #F2706E;
+    color: #993333;
+}
+.hide{
+    display: none;
+}
+.readybtn{
+    height: 55px;
+    position: relative;
+}
+.btn{
+    position: absolute;
+    text-align: center;
+}
+.ready{
+    z-index: 9;
+}
+input[type=checkbox]{
+    float: left;
+    margin-top: 12px;
+    height: 20px;
+    width: 20px;
+}
+p{
+    float: left;
+    margin-left: 6px;
+    line-height: 2.6;
+    color:#666;
+}
+</style>
+<body>
+    <div class="bigbox">
+        <div class="list"><label><input type="checkbox" name="name" value="" /></label><a href="/Eventmanage/eventmanageround"><p>比赛规则设置</p></a></div>
+        <div class="list"><label><input type="checkbox" name="name" value="" /></label><a href="/Eventmanage/eventmanageplayer"><p>选手报名管理</p></a></div>
+        <div class="list"><label><input type="checkbox" name="name" value="" /></label><a href="/Eventmanage/eventmanageumpire"><p>裁判报名管理</p></a></div>
+        <div class="list"><label><input type="checkbox" name="name" value="" /></label><a href="/Eventmanage/eventmanageroom"><p>Room管理</p></a></div>
+        <div class="hide">
+            <div class="list"><label><input type="checkbox" name="name" value="" /></label><a href="/Eventmanage/eventnewplayersignin"><p>选手签到管理</p></a></div>
+            <div class="list"><label><input type="checkbox" name="name" value="" /></label><a href="/Eventmanage/eventumpiresignin"><p>裁判签到管理</p></a></div>
+        </div>
+
+        <div class="list readybtn">
+            <button class="ready btn"><h4>准备好了吗</h4><h5>点击开始比赛当日操作</h5></button>
+            <a href="javascript:;" class="start btn"><h4>开始比赛</h4><h5>点击开始执行对垒</h5></a>
+        </div>
+        <div class="hide">
+            <div class="list"><label><input type="checkbox" name="name" value="" /></label><a href="/Eventmanage/track"><p>Track 查询</p></a></div>
+            <div class="list"><label><input type="checkbox" name="name" value="" /></label><a href="/Eventmanage/resulttrackaround"><p>赛果查询</p></a></div>
+            <div class="list"><label><input type="checkbox" name="name" value="" /></label><a href="/Eventmanage/prize"><p>奖项设置</p></a></div>
+            <div class="list"><label><input type="checkbox" name="name" value="" /></label><a href="/Eventmanage/winnerlist"><p>获奖名单</p></a></div>
+        </div>
+    </div>
+<script>
+    $(".ready").click(function(){
+        $(".start").css("zIndex","10");
+        $(".hide").slideDown("slow");
+        $(".readybtn").css({"border-top":"1px dashed rgb(187, 62, 179)"})
+    })
+</script>
+</body>
+</html>
