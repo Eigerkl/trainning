@@ -1,0 +1,4 @@
+{
+"voce":[{"code":"1","name":"农林水利"},{"code":"10","name":"军工"},{"code":"11","name":"农林"},{"code":"12","name":"水利(电)"},{"code":"13","name":"水电站"},{"code":"14","name":"输变线"},{"code":"15","name":"煤矿"},{"code":"16","name":"气田"},{"code":"17","name":"公路"},{"code":"18","name":"铁路"},{"code":"19","name":"民航"},{"code":"2","name":"能源"},{"code":"20","name":"信息产业"},{"code":"21","name":"化工"},{"code":"22","name":"机械"},{"code":"23","name":"冶金"},{"code":"24","name":"有色金属"},{"code":"25","name":"建材"},{"code":"26","name":"医药"},{"code":"27","name":"轻工"},{"code":"28","name":"农牧产品深加工"},{"code":"3","name":"交通"},{"code":"4","name":"通讯"},{"code":"5","name":"特色产业"},{"code":"6","name":"城市基础设施"},{"code":"7","name":"商贸流通"},{"code":"8","name":"旅游"},{"code":"9","name":"文体卫"}],
+"industr":[{"code":"1","name":"国有"},{"code":"2","name":"私人"}]
+}

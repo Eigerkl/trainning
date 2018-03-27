@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax跨域请求</title>
+    <link rel="stylesheet" href="css/basic.css">
+</head>
+<body>
+    企业性质<div id="vocaspec"> </div>
+    行业类型<div id="industr"></div><script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                type: "get",
+                url: "json.txt",
+                //json格式接收数据
+                dataType: "json",
+                //指点后台调用什么方法
+                data: "meth=load",
+                success: function (msg) {
+                    //实例2个字符串变量来拼接下拉列表
+                    var industr = "<select name=\"industr\"><option label=\"---请选择---\"></option>";
+                    var vocaspec = "<select name=\"vocaspec\"><option label=\"---请选择---\"></option>";
+                    //使用jquery解析json中的数据
+                    $.each(msg.voce, function (n, value) {
+                        vocaspec += ("<option value=\"" + value.code + "\" label=\"" + value.name + "\">");
+                        vocaspec += ("</option>");
+                    });
+                    $.each(msg.industr, function (n, value) {
+                        industr += ("<option value=\"" + value.code + "\" label=\"" + value.name + "\">");
+                        industr += ("</option>");
+                    });
+                    industr += ("</select>");
+                    $("#vocaspec").html(vocaspec);
+                    $("#industr").html(industr);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

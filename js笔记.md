@@ -16,8 +16,15 @@
 ### 函数表达式：  表达式定义的函数，称为匿名函数。匿名函数没有函数提升
 
 
+---------------------------------------------------------------------------
+#### 浏览器请求方法：HEAD,GET,POST
+- HEAD的头信息包括：Accept,Accept-Language,Content-Language,Last-Event-ID,Content-Type(只限于三个值application/x-www-urlencoded,multipart/form-data,text/plain)
+
+ajax请求时，如果存在跨域现象并且没有解决，ajax是伴随跨域的
 
 
+## ajax跨域请求
+ajax
 
 
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/basic.css">
+</head>
+<body>
+    <input id="btn" type="button" value="跨域获取数据" />
+    <textarea id="text" style="width: 400px; height: 100px;"></textarea>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function () {
+8
+9             $("#btn").click(function () {
+10                 $.ajax({
+11                     url: 'json.txt',
+12                     type: 'GET',
+13                     success: function (data) {
+14                         $(text).val(data);
+15                     }
+16                 });
+17
+18             });
+19
+20         });
+</script>
+</body>
+</html>
